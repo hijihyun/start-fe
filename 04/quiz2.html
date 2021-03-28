@@ -2,37 +2,51 @@
 <html>
 <head>
     <meta charset=utf-8 />
-    <title>source</title>
+    <title>quiz2</title>
 </head>
 <body>
 
 <div id="board">
-    <!-- 이 HTML을 자바스크립트로 추가하면 됩니다.
-      <span class="black"></span>
-      <span class="white"></span>
-      <span class="black"></span>
-      <span class="white"></span>
-      <span class="white"></span>
-      <span class="black"></span>
-      <span class="white"></span>
-      <span class="black"></span>
-      <span class="black"></span>
-      <span class="white"></span>
-      <span class="black"></span>
-      <span class="white"></span>
-      <span class="white"></span>
-      <span class="black"></span>
-      <span class="white"></span>
-      <span class="black"></span>
-    //-->
 </div>
 <script>
     var board = document.getElementById("board");
+
+    // ==========1. 이중 for문으로 <span> 생성==========
+    var str = '';
     for(var i=0; i<4; i++){
         for(var j=0; j<4; j++){
             // TODO : 여기에 필요한 코드를 작성해주세요.
+            if(i%2 == 0) {
+                if (j%2 == 0) {
+                    str += '<span class="black"></span> ';
+                } else {
+                    str += '<span class="white"></span> ';
+                }
+            } else {
+                if (j%2 == 0) {
+                    str += '<span class="white"></span> ';
+                } else {
+                    str += '<span class="black"></span> ';
+                }
+            }
         }
+        str += '<br>';
     }
+    console.log(str);
+    board.innerHTML = str;
+
+    // ==========2. css처리==========
+    var css = document.createElement('style');
+    var css_str = ".black {width:500px; height:50px; background-color:black;}"+".white {width:50px; height:50px; background-color:white;}";
+    var head = document.head || document.getElementsByTagName('head')[0];
+    css.type='text/css';
+    css.appendChild(document.createTextNode(css_str));
+    head.appendChild(css);
+
+        // total = document.createElement('span'); // <span> 생성
+        // totalStr = document.createTextNode((clickCnt+1)+" / "+parseInt((todayPhoto.length)/3+1)); 
+        // total.appendChild(totalStr);
+        // document.querySelector('#prev').after(total);
 </script>
 </body>
 </html>

@@ -41,7 +41,7 @@ var box2 = document.querySelectorAll('.box'); // 2개 다
 console.log(box);
 console.log(box2);
 
-var debug = document.querySelector('#debug'); // idsms #으로 가져올 수 있다
+var debug = document.querySelector('#debug'); // id는 #으로 가져올 수 있다
 
 document.querySelectorAll('div'); // <div>전부. daum에 쳐보면 157개
 
