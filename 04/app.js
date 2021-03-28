@@ -111,7 +111,7 @@ for (var i = 0; i < li.children.length; i++) {
 debugger; // F12 console에서 변수 엔터 or 코드에 마우스 올려 확인할 수 있다.
 
 // 여러개 한 번에 등록
-app.addEventListener("click", function(event) {
+li.addEventListener("click", function(event) {
   if(event.target.nodeName == "LI"){
     console.log(2);
   }
