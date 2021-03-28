@@ -4,7 +4,7 @@
     <meta charset=utf-8 />
     <title>quiz2</title>
     <style>
-        /* ========== <span> css 처리========== */
+        /* ==========0. <span> css 처리========== */
         div {
             line-height: 0; /* 줄간격 제거 */
             width: 200px;
@@ -22,6 +22,12 @@
             height: 50px;
             display: inline-block;
             background-color: white;
+        }
+        .blackRed, .whiteRed {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            background-color: red;
         }
     </style>
 </head>
@@ -56,17 +62,27 @@
                 }
             }
         }
+        // 줄바꿈
         var br = document.createElement('br');
-        
         board.appendChild(br);
     }
 
     // ==========2. 이벤트 처리==========
-    var div = document.querySelector('div');
-    
-    div.addEventListener("click", function(event) {
-        if(event.target.nodeName == "SPAN"){
-            event.target.style.backgroundColor="red";
+    var spans = document.querySelectorAll('span');
+
+    board.addEventListener("click", function(event) {
+        if(event.target.nodeName === "SPAN"){ // <span>에 클릭이 발생했다면
+            // ==========3. 기존 red가 있는지 for문으로 check 후 제거==========
+            for (var i = 0; i < spans.length; i++) {
+                if (spans[i].classList.value.includes("blackRed")) {
+                    spans[i].classList.value="black";
+                } else if (spans[i].classList.value.includes("whiteRed")) {
+                    spans[i].classList.value="white";
+                }
+            }
+            // 클릭한 <span>의 클래스 이름에 "Red" 추가하여 red color의 <span>으로 채색
+            event.target.className += "Red";
+        }
     });
 </script>
 </body>
