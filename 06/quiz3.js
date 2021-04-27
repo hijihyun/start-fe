@@ -31,8 +31,11 @@
 const $add_red = document.querySelector('.add-red');
 
 function add_red(event) {
-    const $box = document.querySelector('.box');
-    $box.classList.value += ' red';
+    const $boxs = document.querySelectorAll('.box');
+    const boxsLength = $boxs.length;
+    for (let i = 0; i < boxsLength; i++) {
+        $boxs[i].classList.value += ' red';
+    }
 }
 
 $add_red.addEventListener('click', add_red);
@@ -42,7 +45,7 @@ const $add_btn = document.querySelector('.add-btn');
 
 function add_btn(event) {
     const div = document.createElement('div');
-    div.className = "box red";
+    div.className = "box";
     document.body.appendChild(div);
 }
 
