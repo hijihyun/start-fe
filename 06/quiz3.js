@@ -28,65 +28,71 @@
 */
 
 //========== 문제 1 ==========
-var $add_red = document.querySelector('.add-red');
-var $box = document.querySelector('.box');
+const $add_red = document.querySelector('.add-red');
 
 function add_red(event) {
+    const $box = document.querySelector('.box');
     $box.classList.value += ' red';
 }
+
 $add_red.addEventListener('click', add_red);
 
 //========== 문제 2 ==========
-var $add_btn = document.querySelector('.add-btn');
+const $add_btn = document.querySelector('.add-btn');
 
 function add_btn(event) {
-    var div = document.createElement('div');
+    const div = document.createElement('div');
     div.className = "box red";
     document.body.appendChild(div);
 }
+
 $add_btn.addEventListener('click', add_btn);
 
 //========== 문제 3 ==========
-var $delete_btn = document.querySelector('.delete-btn');
+const $delete_btn = document.querySelector('.delete-btn');
 
 function delete_btn(event) {
-    var $del = document.querySelectorAll('.box'); 
+    const $del = document.querySelectorAll('.box'); 
     $del[0].remove();
 }
+
 $delete_btn.addEventListener('click', delete_btn);
 
 //========== 문제 4 ==========
-var $text_btn = document.querySelector('.text-btn');
-var $txt = document.querySelector('.txt');
+const $text_btn = document.querySelector('.text-btn');
+const $txt = document.querySelector('.txt');
 
 function text_btn(event) {
-    var $boxs = document.querySelectorAll('.box');
-    var boxsLength = $boxs.length;
-    for (var i = 0; i < boxsLength; i++) {
+    const $boxs = document.querySelectorAll('.box');
+    const boxsLength = $boxs.length;
+    for (let i = 0; i < boxsLength; i++) {
         $boxs[i].append($txt.value);
     }
 }
+
 $text_btn.addEventListener('click', text_btn);
 
 //========== 문제 5 ==========
-var $reset_btn = document.querySelector('.reset-btn');
+const $reset_btn = document.querySelector('.reset-btn');
 
 function reset_btn(event) {
-    var $boxs = document.querySelectorAll('.box');
-    var boxsLength = $boxs.length;
-    for (var i = 0; i < boxsLength; i++) {
+    const $boxs = document.querySelectorAll('.box');
+    const boxsLength = $boxs.length;
+    for (let i = 0; i < boxsLength; i++) {
         $boxs[i].remove();
     }
 }
+
 $reset_btn.addEventListener('click', reset_btn);
 
 //========== 문제 6 ==========
-var $toggle_btn = document.querySelector('.toggle-btn');
+const $toggle_btn = document.querySelector('.toggle-btn');
 
 function toggle_btn(event) {
-    var $boxs = document.querySelectorAll('.box');
-    var boxsLength = $boxs.length;
-    for (var i = 0; i < boxsLength; i++) {
+    const $boxs = document.querySelectorAll('.box');
+    const boxsLength = $boxs.length;
+
+    for (let i = 0; i < boxsLength; i++) {
         if($boxs[i].style.display === 'none')  {
             $boxs[i].style.display = 'block';
         }else {
@@ -94,25 +100,36 @@ function toggle_btn(event) {
         }
     }
 }
+
 $toggle_btn.addEventListener('click', toggle_btn);
 
 //========== 문제 7 ==========
-var $image_btn = document.querySelector('.image-btn');
+const $image_btn = document.querySelector('.image-btn');
 
 function image_btn(event) {
-    var $boxs = document.querySelectorAll('.box');
-    var boxsLength = $boxs.length;
+    const $boxs = document.querySelectorAll('.box');
+    const boxsLength = $boxs.length;
 
-    if (boxsLength==0) {
-        var div = document.createElement('div');
+    if (boxsLength === 0) { // box div가 없을 경우
+        // div 생성 후
+        const div = document.createElement('div');
         div.className = "box";
         document.body.appendChild(div);
-    } else {
-        for (var i = 0; i < boxsLength; i++) {
-            var img = document.createElement('img');
+        // 이미지 추가
+        const $box = document.querySelector('.box');
+        const img = document.createElement('img');
+        img.src = "test.png";
+        $box.appendChild(img);
+    } else { // box div가 있을 경우
+        for (let i = 0; i < boxsLength; i++) {
+            const img = document.createElement('img');
             img.src = "test.png";
             $boxs[i].appendChild(img);
         }
     }
 }
+
 $image_btn.addEventListener('click', image_btn);
+
+//========== 문제  ==========
+// 위에서 작성한 코드들을 최대한 함수화, 재사용성 높임
