@@ -1,17 +1,28 @@
 const $result = document.getElementById('result');
-const $num = document.getElementById('num');
+let $num = document.getElementById('num').value;
 const $btn = document.getElementById('btn');
+
 let times = '';
 
-timesTable(); 
-function timesTable() {
+timesTable($num); 
+function timesTable($num) {
     for (var i = 1; i <= 9; i++) {
-        for (var j = 1; j <= 9; j++) {
-            times += `
-            ${i} * ${j} = ${i * j}`;
-        }
+        times += `${$num} x ${i} = ${$num * i} <br>`;
     }
+
+    $result.innerHTML = times;
+    times = '';
 }
 
-$result.append(times);
+$btn.addEventListener('click', (event)=>{
+    $num = document.getElementById('num').value;
+    if(isNaN($num)) {
+        $num.innerHTML = "";
+        alert('숫자를 입력해주세요.');
+        location.reload(true);
+        return;
+    }
+    $result.innerHTML = times;
+    timesTable($num);
+});
 

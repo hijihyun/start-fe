@@ -4,9 +4,6 @@ let offset = {x:0, y:0, x1:0, y1:0};
 let isDown = false;
 let clickedBox; // box, box1 구분
 
-$box.addEventListener('mousedown', (event) => mousedown($box, event));
-$box1.addEventListener('mousedown', (event) => mousedown($box1, event));
-
 function mousedown(box, event) {
     isDown = true;
     clickedBox = box.className;
@@ -22,8 +19,6 @@ function mousedown(box, event) {
     }
 }
 
-document.body.addEventListener('mousemove', (event)=> mousemove(event));
-
 function mousemove(event) {
     if(!isDown) return;
 
@@ -38,10 +33,13 @@ function mousemove(event) {
     }
 }
 
-$box.addEventListener('mouseup', mouseup);
-$box1.addEventListener('mouseup', mouseup);
-
 function mouseup() {
     isDown = false;
     clickedBox = null;
 }
+
+$box.addEventListener('mousedown', (event) => mousedown($box, event));
+$box1.addEventListener('mousedown', (event) => mousedown($box1, event));
+document.body.addEventListener('mousemove', (event)=> mousemove(event));
+$box.addEventListener('mouseup', mouseup);
+$box1.addEventListener('mouseup', mouseup);
