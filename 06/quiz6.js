@@ -1,7 +1,7 @@
 const $result = document.getElementById('result');
 let $num = document.getElementById('num').value;
 const $btn = document.getElementById('btn');
-let times = '';
+let times = ''; // feedback: times보다는 resultHtml같이 명확한 변수명
 
 function timesTable($num) {
     for (var i = 1; i <= 9; i++) {

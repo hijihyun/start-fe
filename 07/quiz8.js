@@ -1,7 +1,7 @@
 const $box = document.querySelector('.box');
-let $point = document.getElementById('point');
-let $life = document.getElementById('life');
-let $bug = document.getElementById('bug');
+let $min = document.getElementById('min');
+let $min = document.getElementById('min');
+let $btn = document.getElementById('btn');
 
 function random() {
 	let randomNumber = Math.random() * 380;
