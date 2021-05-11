@@ -1,10 +1,8 @@
 const $result = document.getElementById('result');
 let $num = document.getElementById('num').value;
 const $btn = document.getElementById('btn');
-
 let times = '';
 
-timesTable($num); 
 function timesTable($num) {
     for (var i = 1; i <= 9; i++) {
         times += `${$num} x ${i} = ${$num * i} <br>`;
@@ -19,10 +17,11 @@ $btn.addEventListener('click', (event)=>{
     if(isNaN($num)) {
         $num.innerHTML = "";
         alert('숫자를 입력해주세요.');
-        location.reload(true);
+        location(true);
         return;
     }
     $result.innerHTML = times;
     timesTable($num);
 });
 
+timesTable($num); 
