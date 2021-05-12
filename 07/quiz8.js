@@ -1,26 +1,18 @@
-const $box = document.querySelector('.box');
+let $box = document.getElementById('box');
 let $min = document.getElementById('min');
-let $min = document.getElementById('min');
-let $btn = document.getElementById('btn');
+let $max = document.getElementById('max');
+const $btn = document.getElementById('btn');
+let randomNumber = Math.round(Math.random() * 1000);
 
-// function random() {
-// 	let randomNumber = Math.random() * 380;
-// 	$bug.style.left = randomNumber + 'px';
-// 	$bug.style.top = randomNumber + 'px';
-// }
+function random(min, max) {
+	while (min < randomNumber && randomNumber < max) {
+		randomNumber = Math.round(Math.random() * 1000);
+	}
+	return randomNumber;
+}
 
-// $bug.addEventListener('click', (event) => {
-// 	$point.innerHTML++;
-// 	$life.innerHTML++;
-// });
+$btn.addEventListener('click', (event) => {
+	$box.innerHTML = random(min, max);
+});
 
-// $box.addEventListener('click', (event) => {
-// 	if ($life.innerHTML === '1') {
-// 		alert('gameover');
-// 		location.reload(true);
-// 		return;
-// 	}
-// 	$life.innerHTML--;
-// });
-
-// setInterval(random, 2000);
+//setInterval(random, 2000);
