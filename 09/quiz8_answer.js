@@ -4,7 +4,7 @@ const $max = document.getElementById('max');
 const $btn = document.getElementById('btn');
 
 $btn.addEventListener('click', () => {
-	const min = parseInt($min.value, 10);
+	const min = parseInt($min.value, 10); // 지역 변수
 	const max = parseInt($max.value, 10);
 
 	const randomNumber = Math.floor(Math.random() * (max - min)) + min;
