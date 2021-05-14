@@ -4,7 +4,6 @@ const $result = document.querySelector('#result');
 const url = 'https://dapi.kakao.com/v2/search/web';
 const headers = { Authorization: 'KakaoAK 9ac229859e9b13e1667fdaba85d84ce7' };
 let value = '';
-let more = '';
 
 function success(data) {
 	const { documents } = data;
@@ -15,10 +14,6 @@ function success(data) {
 		<button class="btn btn-info" type="button" id="more">내용 더보기</button>
 		<div id="contents" style="display: none">${doc.contents}<div></li>
 		`;
-	});
-
-	more = documents.map((doc) => {
-		return `${doc.contents}`;
 	});
 
 	$result.innerHTML = `<ul class="list-group list-group-flush">${li.join(
