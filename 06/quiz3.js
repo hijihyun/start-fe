@@ -31,11 +31,11 @@
 const $add_red = document.querySelector('.add-red');
 
 function add_red(event) {
-    const $boxs = document.querySelectorAll('.box');
-    const boxsLength = $boxs.length;
-    for (let i = 0; i < boxsLength; i++) {
-        $boxs[i].classList.value += ' red';
-    }
+	const $boxs = document.querySelectorAll('.box');
+	const boxsLength = $boxs.length;
+	for (let i = 0; i < boxsLength; i++) {
+		$boxs[i].classList.value += ' red';
+	}
 }
 
 $add_red.addEventListener('click', add_red);
@@ -44,9 +44,9 @@ $add_red.addEventListener('click', add_red);
 const $add_btn = document.querySelector('.add-btn');
 
 function add_btn(event) {
-    const div = document.createElement('div');
-    div.className = "box";
-    document.body.appendChild(div);
+	const div = document.createElement('div');
+	div.className = 'box';
+	document.body.appendChild(div);
 }
 
 $add_btn.addEventListener('click', add_btn);
@@ -55,8 +55,8 @@ $add_btn.addEventListener('click', add_btn);
 const $delete_btn = document.querySelector('.delete-btn');
 
 function delete_btn(event) {
-    const $del = document.querySelectorAll('.box'); 
-    $del[0].remove();
+	const $del = document.querySelectorAll('.box');
+	$del[0].remove();
 }
 
 $delete_btn.addEventListener('click', delete_btn);
@@ -66,11 +66,11 @@ const $text_btn = document.querySelector('.text-btn');
 const $txt = document.querySelector('.txt');
 
 function text_btn(event) {
-    const $boxs = document.querySelectorAll('.box');
-    const boxsLength = $boxs.length;
-    for (let i = 0; i < boxsLength; i++) {
-        $boxs[i].append($txt.value);
-    }
+	const $boxs = document.querySelectorAll('.box');
+	const boxsLength = $boxs.length;
+	for (let i = 0; i < boxsLength; i++) {
+		$boxs[i].append($txt.value);
+	}
 }
 
 $text_btn.addEventListener('click', text_btn);
@@ -79,11 +79,11 @@ $text_btn.addEventListener('click', text_btn);
 const $reset_btn = document.querySelector('.reset-btn');
 
 function reset_btn(event) {
-    const $boxs = document.querySelectorAll('.box');
-    const boxsLength = $boxs.length;
-    for (let i = 0; i < boxsLength; i++) {
-        $boxs[i].remove();
-    }
+	const $boxs = document.querySelectorAll('.box');
+	const boxsLength = $boxs.length;
+	for (let i = 0; i < boxsLength; i++) {
+		$boxs[i].remove();
+	}
 }
 
 $reset_btn.addEventListener('click', reset_btn);
@@ -92,16 +92,16 @@ $reset_btn.addEventListener('click', reset_btn);
 const $toggle_btn = document.querySelector('.toggle-btn');
 
 function toggle_btn(event) {
-    const $boxs = document.querySelectorAll('.box');
-    const boxsLength = $boxs.length;
+	const $boxs = document.querySelectorAll('.box');
+	const boxsLength = $boxs.length;
 
-    for (let i = 0; i < boxsLength; i++) {
-        if($boxs[i].style.display === 'none')  {
-            $boxs[i].style.display = 'block';
-        }else {
-            $boxs[i].style.display = 'none';
-        }
-    }
+	for (let i = 0; i < boxsLength; i++) {
+		if ($boxs[i].style.display === 'none') {
+			$boxs[i].style.display = 'block';
+		} else {
+			$boxs[i].style.display = 'none';
+		}
+	}
 }
 
 $toggle_btn.addEventListener('click', toggle_btn);
@@ -110,26 +110,28 @@ $toggle_btn.addEventListener('click', toggle_btn);
 const $image_btn = document.querySelector('.image-btn');
 
 function image_btn(event) {
-    const $boxs = document.querySelectorAll('.box');
-    const boxsLength = $boxs.length;
+	const $boxs = document.querySelectorAll('.box');
+	const boxsLength = $boxs.length;
 
-    if (boxsLength === 0) { // box div가 없을 경우
-        // div 생성 후
-        const div = document.createElement('div');
-        div.className = "box";
-        document.body.appendChild(div);
-        // 이미지 추가
-        const $box = document.querySelector('.box');
-        const img = document.createElement('img');
-        img.src = "test.png";
-        $box.appendChild(img);
-    } else { // box div가 있을 경우
-        for (let i = 0; i < boxsLength; i++) {
-            const img = document.createElement('img');
-            img.src = "test.png";
-            $boxs[i].appendChild(img);
-        }
-    }
+	if (boxsLength === 0) {
+		// box div가 없을 경우
+		// div 생성 후
+		const div = document.createElement('div');
+		div.className = 'box';
+		document.body.appendChild(div);
+		// 이미지 추가
+		const $box = document.querySelector('.box');
+		const img = document.createElement('img');
+		img.src = 'test.png';
+		$box.appendChild(img);
+	} else {
+		// box div가 있을 경우
+		for (let i = 0; i < boxsLength; i++) {
+			const img = document.createElement('img');
+			img.src = 'test.png';
+			$boxs[i].appendChild(img);
+		}
+	}
 }
 
 $image_btn.addEventListener('click', image_btn);
