@@ -1,4 +1,4 @@
-###HTTP
+# HTTP
 
 -   HTTP: HTML 문서와 같은 리소스들을 가져올 수 있도록 해주는 프로토콜(protocol)
 -   url: 기본 포트는 생략되며 :80
@@ -24,7 +24,7 @@
 3. curl: CLI툴. $ curl -v https://1boon.kakao.com 명령어
    nodejs는 백엔드 프로그래밍을 할 수 있는 자바스크립트 플랫폼
 
-###HTTP스크립팅(Ajax, Asynchronous비동기 JavaScript and XML)
+# HTTP스크립팅(Ajax, Asynchronous비동기 JavaScript and XML)
 
 -   자바스크립트로 http 조작
 -   순차적으로 쭉 내려오는게 동기, 이벤트를 등록하고 기다리는게 비동기
@@ -38,7 +38,7 @@
     promise.then(res=>console.log(res.text()))
     app.js에서 실습
 
-###JSON
+## JSON
 
 -   xml 형태는 파싱 오래걸리고 커서 자바스크립트 오브젝트 형태로 데이터를 주고받게 되었다
 -   JSON 이쁘게 볼 수 있는 크롬 확장 JSON viewer

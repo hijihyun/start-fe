@@ -1,18 +1,19 @@
-###자바스크립트의 모듈 시스템
+# 자바스크립트의 모듈 시스템
+
 모듈이란 특정 코드들을 묶은 하나의 모음
 파일이 클수록 여러 개로 나눠 <script>로 불러올 수 있다
 
 1. ESM: export, import 키워드 사용
 2. CommonJS: Node.js에서 사용하며 module.exports와 require 키워드
 
-###배포
+# 배포
 
 -   배포 시 자바스크립트의 빌드는 이 static 파일들을 중복제거하고 합쳐 효율적으로 서빙(번들링)
 
 -   Node.js 설치했기 때문에 터미널에서 테스트 cd 10하고 node main.js
     자동화나 백엔드 개발도 Node로
 
-######Webpack
+## Webpack
 
 -   브라우저에서 테스트하면 에러나므로 Webpack 사용 빌드
 -   이 폴더도 하나의 프로그램이므로 먼저 터미널에 npm init쳐서 packge.json 정의해주고
@@ -34,7 +35,7 @@
     따라서 "build": "webpack"해주면 된다.
     npx webpack --watch하면 실행 끝나지 않고 수정 일어나면 자동빌드
 
-######webpack-dev-server
+## webpack-dev-server
 
 -   webpack-dev-server라는 플러그인 serve대신 이용
 -   npm install --save-dev webpack-dev-server설치 후
@@ -46,7 +47,7 @@
     "start": "webpack-dev-server --open", 추가해서 npm start치면 브라우저 바로 띄우기
     자동 watching
 
-######HtmlWebpackPlugin
+## HtmlWebpackPlugin
 
 -   dist에 index.html 옮겨 production환경이랑 비슷했으면 좋겠어
     npm install --save-dev html-webpack-plugin설치하고 webpack.config 수정
