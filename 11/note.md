@@ -31,3 +31,8 @@ webpack이 js파일에서 css파일을 읽어 head태그 안에 꽂아준다
 각종 id값 설정하고 js에 DOM 가져오고
 submit event 확인 및 render 등 함수화/모듈화
 .eslintrc.js에 'import/prefer-default-export': 'off', 추가
+
+다양한 모듈화
+object 합치는 함수 assign
+
+result 전체에 이벤트 잡고 클래스 네임별로 처리

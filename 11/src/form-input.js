@@ -11,6 +11,7 @@ function init(data) {
 		event.preventDefault(); // 넘어가지 않도록 하고 submit 이벤트 확인
 
 		const text = $input.value;
+		if (!text) return; // text가 없으면 리턴
 		console.log(text);
 		$input.value = ''; // 적고 나서 지우기
 

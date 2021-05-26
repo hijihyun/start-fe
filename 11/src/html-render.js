@@ -5,7 +5,7 @@ export function render(data) {
 
 	// eslint-disable-next-line arrow-body-style
 	const html = data.map((todo, index) => {
-		return `<li>
+		return `<li data-index="${index}">
     <button class="delete">×</button>
     <input type="checkbox" class="toggle-checked" ${
 		todo.isDone ? 'checked' : ''
