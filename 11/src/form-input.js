@@ -15,22 +15,22 @@ function init(data) {
 		console.log(text);
 		$input.value = ''; // 적고 나서 지우기
 
+		// todos에 push
+		data.push({
+			...todoModel,
+			text,
+			inDone: false,
+		});
+
+		/*
+		// 동일 코드
 		data.push(
 			Object.assign(todoModel, {
 				// object 합쳐주는 함수
 				text,
 				inDone: false,
-			}),
-		); // todos에 push
-
-		/*
-        // 동일 코드
-        data.push( 
-            ... todoModel, { 
-			text,
-			inDone: false,
-		});
-        */
+		}));
+		*/
 
 		render(data);
 	});

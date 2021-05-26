@@ -36,3 +36,14 @@ submit event 확인 및 render 등 함수화/모듈화
 object 합치는 함수 assign
 
 result 전체에 이벤트 잡고 클래스 네임별로 처리
+
+###### 배포
+
+npm run build 하면 dist 폴더 생성
+serve dist
+.gitignore에 dist 추가
+
+###### 저장
+
+1. 브라우저 local storage
+2. nodeJs 간단한 backend
