@@ -26,3 +26,6 @@ todo.css가 dist에 없으므로 index.js에서 import
 webpack이 js파일에서 css파일을 읽어 head태그 안에 꽂아준다
 
 ###### 기능
+
+엔터치면 form이 submit되는중
+각종 id값 설정하고 js에 DOM 가져오기

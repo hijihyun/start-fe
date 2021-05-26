@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Todos</title>
-  <link rel="stylesheet" href="todos.css">
 </head>
 <body>
 
@@ -11,17 +10,18 @@
   <header>
     <h1>Todo List</h1>
 
-    <form class="new-task">
-      <input type="text" name="text" placeholder="할일을 입력하세요">
+    <form class="new-task" id="input-form">
+      <input type="text" name="text" placeholder="할일을 입력하세요" id="input">
     </form>
   </header>
-  <ul>
+  <div id="result"></div>
+  <!-- <ul>
     <li>
       <button class="delete">×</button>
       <input type="checkbox" class="toggle-checked">
       <span class="text">JS공부하기</span>
     </li>
-  </ul>
+  </ul> -->
 
 </div>
 
