@@ -11,5 +11,6 @@ module.exports = {
 	rules: {
 		'no-unused-vars': 'warn',
 		'no-var': 'warn',
+		'import/prefer-default-export': 'off',
 	},
 };

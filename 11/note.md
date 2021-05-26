@@ -28,4 +28,6 @@ webpack이 js파일에서 css파일을 읽어 head태그 안에 꽂아준다
 ###### 기능
 
 엔터치면 form이 submit되는중
-각종 id값 설정하고 js에 DOM 가져오기
+각종 id값 설정하고 js에 DOM 가져오고
+submit event 확인 및 render 등 함수화/모듈화
+.eslintrc.js에 'import/prefer-default-export': 'off', 추가
