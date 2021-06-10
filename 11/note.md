@@ -64,4 +64,4 @@ serve dist
 
 copy하고 다시 만드는경우 rm -rf node_modules하고 다시 npm i 주면 된다
 docs폴더에 dist 애들 옮기고 깃허브 페이지에서 docs옵션 선택
-자동화 package.json 수정하고 깃에 push
+자동화 package.json 수정("build": "webpack && cp dist/\* ../docs)하고 깃에 push
