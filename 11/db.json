@@ -1,0 +1,12 @@
+{
+    "todos" : [
+        {
+            "text":"공부1",
+            "isDone":false
+        },
+        {
+            "text":"공부2",
+            "isDone":true
+        }
+    ]
+}
