@@ -58,3 +58,10 @@ serve dist
 2. 원격 저장을 위한 간단한 backend작업 json server
    npm install json-server
    로컬 실행 npx json-server --watch db.json
+   fetch이용 CRUD
+
+#### 깃허브 페이지로 production환경 서비스 배포
+
+copy하고 다시 만드는경우 rm -rf node_modules하고 다시 npm i 주면 된다
+docs폴더에 dist 애들 옮기고 깃허브 페이지에서 docs옵션 선택
+자동화 package.json 수정하고 깃에 push

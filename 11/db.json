@@ -1,10 +1,12 @@
 {
     "todos" : [
         {
+            "id":1,
             "text":"공부1",
             "isDone":false
         },
         {
+            "id":2,
             "text":"공부2",
             "isDone":true
         }
