@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open",
-    "build": "webpack && cp dist/* ../docs"
+    "build": "webpack"
   },
   "devDependencies": {
     "css-loader": "^5.2.6",
