@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8 />
+    <title>quiz2</title>
+    <style>
+        /* ==========0. <span> css 처리========== */
+        div {
+            line-height: 0; /* 줄간격 제거 */
+            width: 200px;
+            border: 3px solid gray;
+            margin: auto;  /* 가운데 정렬 */
+        }
+        .black {
+            width: 50px;
+            height: 50px;
+            display: inline-block; /* display속성값을 inline에서 block으로 바꿔줘야 width 지정이 가능하다.*/
+            background-color: black;
+        }
+        .white {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            background-color: white;
+        }
+        .blackRed, .whiteRed {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="board">
+</div>
+<script>
+    var board = document.getElementById("board");
+
+    // ==========1. 이중 for문에 <span> 생성 함수==========
+    function span(color) {
+        var span = document.createElement('span');
+        span.className = color;
+
+        board.appendChild(span);
+    }
+
+    for(var i=0; i<4; i++){
+        for(var j=0; j<4; j++){
+            // TODO : 여기에 필요한 코드를 작성해주세요.
+            if(i%2 == 0) {
+                if (j%2 == 0) {
+                    span('black');
+                } else {
+                    span('white');
+                }
+            } else {
+                if (j%2 == 0) {
+                    span('white');
+                } else {
+                    span('black');
+                }
+            }
+        }
+        // 줄바꿈
+        var br = document.createElement('br');
+        board.appendChild(br);
+    }
+
+    // ==========2. 이벤트 처리==========
+    var spans = document.querySelectorAll('span');
+
+    board.addEventListener("click", function(event) {
+        if(event.target.nodeName === "SPAN"){ // <span>에 클릭이 발생했다면
+            // ==========3. 기존 red가 있는지 for문으로 check 후 제거==========
+            for (var i = 0; i < spans.length; i++) {
+                if (spans[i].classList.value.includes("blackRed")) {
+                    spans[i].classList.value="black";
+                } else if (spans[i].classList.value.includes("whiteRed")) {
+                    spans[i].classList.value="white";
+                }
+            }
+            // 클릭한 <span>의 클래스 이름에 "Red" 추가하여 red color의 <span>으로 채색
+            event.target.className += "Red";
+        }
+    });
+</script>
+</body>
+</html>
